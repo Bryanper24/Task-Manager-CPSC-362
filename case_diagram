@@ -1,0 +1,38 @@
+graph TB
+    User((User))
+    
+    subgraph TaskManager["Task Manager System"]
+        UC1[Add Task]
+        UC2[Edit Task]
+        UC3[Delete Task]
+        UC4[Mark Task Complete/Incomplete]
+        UC5[Filter Tasks]
+        UC6[View Task Statistics]
+        UC7[Set Task Priority]
+        UC8[View Task List]
+    end
+    
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC5
+    User --> UC6
+    User --> UC8
+    
+    UC1 --> UC7
+    UC2 --> UC7
+    
+    UC5 -.includes.-> UC8
+    UC6 -.extends.-> UC8
+    
+    style User fill:#4facfe,stroke:#333,stroke-width:3px,color:#fff
+    style TaskManager fill:#f0f0f0,stroke:#667eea,stroke-width:2px
+    style UC1 fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    style UC2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style UC3 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style UC4 fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    style UC5 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    style UC6 fill:#e0f2f1,stroke:#00796b,stroke-width:2px
+    style UC7 fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    style UC8 fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
